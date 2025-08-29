@@ -1,0 +1,221 @@
+/* ProductGrid.css */
+
+/* ---------------- Home Categories ---------------- */
+.home-categories {
+  padding: 20px;
+}
+
+/* Each category block */
+.category-block {
+  margin-bottom: 32px;
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: #ff000021;
+  
+}
+
+.category-header h3 {
+  margin:0;
+  font-size: 1.3rem;
+
+}
+
+.see-all-link {
+  text-decoration: none;
+  color: #2874f0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Horizontal product slider */
+
+.cards-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;          /* show grab hand */
+}
+
+.cards-row:active {
+  cursor: grabbing;      /* while dragging */
+}
+
+
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-row > * {
+  scroll-snap-align: start;
+}
+
+/* Individual card slide (fixed width so cards don’t shrink) */
+.card-slide {
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+/* Last "View All" card */
+.view-all-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aaa;
+  border-radius: 8px;
+  background: #fafafa;
+  min-height: 260px;
+  cursor:default;
+  text-align: center;
+}
+.view-all-card:hover {
+  background: #f0f0f0;
+}
+.view-all-content {
+  font-weight: bold;
+  font-size: 14px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfcfcfb7;
+  border-radius: 10%;
+  color: #2e2e2e
+}
+
+/* ---------------- Category Page ---------------- */
+.category-page {
+  padding: 20px;
+}
+
+/* Filters (top bar) */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filters input,
+.filters button {
+  flex: 1;
+  min-width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Product Grid (infinite scroll view) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card-slide {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  display: flex;       /* ✅ allow product-card to fill */
+}
+
+.view-all-card {
+  flex: 0 0 auto;
+  width: 200px;
+  max-height:334px;   /* matches product card */
+}
+
+
+/* ---------------- Responsive ---------------- */
+
+/* Wrapper for slider with arrows */
+.slider-wrapper {
+  position: relative;
+}
+
+/* Arrow buttons */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-30%);
+  background: #ffffff;
+  border: 1px solid #3a3a3a;
+  border-radius: 8%;
+  width: 60px;
+  height: 80px;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  display: none; /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 2;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.scroll-btn:hover{
+  transform: translateY(-15%) scale(1.02);
+  box-shadow: 0 8px 12px 3px rgba(0, 0, 0, 0.61);
+  background: #1d4ed8;
+  color: white;
+  border: 2px solid white;
+}
+
+.scroll-btn.left { left: -18px; }
+.scroll-btn.right { right: -18px; }
+
+/* Only show on desktop */
+@media (min-width: 1025px) {
+  .scroll-btn {
+    display: flex;
+  }
+}
+
+/* Mobile (max 600px) */
+@media (max-width: 600px) {
+  .home-categories {
+    padding: 10px;
+  }
+
+  /* make product grid 1-col on small screens */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-slide {
+    width: 160px; /* smaller width for mobile swipe */
+  }
+  .view-all-card {
+  min-height:150px;   /* matches product card */
+}
+
+
+}
+
+/* Tablet (601px–1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}

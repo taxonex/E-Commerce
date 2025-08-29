@@ -1,0 +1,183 @@
+.product-page {
+  display: flex;
+  gap: 32px;
+  padding: 20px;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.images-section {
+  flex: 1;
+  max-width:414px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 350px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  object-fit: contain;
+  cursor: zoom-in;
+  background: #fafafa;
+}
+
+.thumbnail-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-top: 12px;
+  
+}
+
+.thumbnail-row img {
+  width: 64px;
+  height: 64px;
+  border: 3px solid transparent;
+  border-radius: 4px;
+  object-fit: contain;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.thumbnail-row img.active-thumb {
+  border-color: #2874f0;
+}
+
+.details-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.details-section h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #e53935;
+  margin: 8px 0;
+}
+
+.rating {
+  font-size: 14px;
+  color: #444;
+}
+
+.desc {
+  font-size: 14px;
+  color: #555;
+  margin: 12px 0;
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.buy-btn,
+.cart-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.buy-btn {
+  background: #ff9f00;
+  color: #fff;
+}
+
+.cart-btn {
+  background: #fb641b;
+  color: #fff;
+}
+
+.offers {
+  margin-top: 20px;
+}
+.offers h3 {
+  margin-bottom: 8px;
+}
+.offers ul {
+  list-style: none;
+  padding: 0;
+}
+.offers li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.specs {
+  margin-top: 20px;
+}
+.specs h3 {
+  margin-bottom: 8px;
+}
+.specs ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.extra-desc {
+  margin-top: 20px;
+}
+.extra-desc h3 {
+  margin-bottom: 8px;
+}
+
+/* Zoom Modal */
+.zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.zoom-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .product-page {
+    flex-direction: column;
+
+  }
+  .images-section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  /* .thumbnail-row img {
+    max-width: 64px;
+    max-height: 64px;
+  } */
+
+}   
+@media (max-width: 410px) {
+  .thumbnail-row img{
+    width: 15vw;
+    height: 15vw;
+  }
+}   

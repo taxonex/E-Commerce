@@ -1,0 +1,103 @@
+/* ProductCard.css */
+* a{
+  text-decoration: none;
+  color: #2e2e2e;
+}
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;              /* ✅ fill parent height */
+  box-sizing: border-box;
+  transition: transform 0.5s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 12px rgba(0,0,0,0.15);
+  transform: translateY(8px) scale(0.95);
+
+}
+
+.product-card img {
+  width: 100%;
+  height: 160px;             /* ✅ uniform image height */
+  object-fit: contain;
+  margin-bottom: 10px;       /* spacing below image */
+}
+
+/* Info section */
+.product-card .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;              /* ✅ stretch to equal height */
+}
+
+.product-card h4 {
+  font-size: 14px;
+  margin: 0 0 4px;
+  line-height: 1.2;
+  min-height: 36px;          /* ✅ reserve space for 2 lines of title */
+}
+
+.product-card .desc {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 6px;
+  min-height: 32px;          /* ✅ reserve space so desc aligns */
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #e53935;
+  font-size: 14px;
+  margin-top: auto;          /* ✅ push price/rating to bottom */
+}
+
+.product-card .rating {
+  font-size: 13px;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .product-card.style2{
+    max-width: 600px;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    height: auto; /* allow flexible height on mobile */
+  }
+  .product-card.style1{
+    max-width: 600px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    align-items: center;
+    height: auto; /* allow flexible height on mobile */
+  }
+  .product-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+  .product-card h4 {
+    font-size: 13px;
+    min-height: auto;
+  }
+  .product-card .desc {
+    min-height: auto;
+  }
+  .product-card .price {
+    font-size: 13px;
+  }
+}
