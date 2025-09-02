@@ -96,7 +96,7 @@ function Layout() {
       tagline="Quality. Value. Speed."
       email="help@NewLoshop.in"
       phone="+91 8512046520"
-      address="I-89, vijjay vihar, phase-2, Rohini Sec-4, Dehli-110085"
+      address="I-89, vijay vihar, phase-2, Rohini Sec-4, Dehli-110085"
       devName="Rohit Sahani"
       devLink="https://myportfolio-rohit.vercel.app/"
     />
